@@ -1,9 +1,10 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import { ArrayBars } from "./ArrayBars";
 import { SortControls } from "./SortControls";
 import { SortStepDescription } from "./SortStepDescription";
 import { useSortingAnimation } from "../../hooks/useSortingAnimation";
 import { generateArray } from "../../utils/generateArray";
+import { saveHistoryEntry } from "../../utils/history";
 import { bubbleSort } from "../../algorithms/sorting/bubbleSort";
 import { selectionSort } from "../../algorithms/sorting/selectionSort";
 import { insertionSort } from "../../algorithms/sorting/insertionSort";
@@ -63,6 +64,19 @@ export function SortVisualizer({
     setSpeed,
     setCurrentStep,
   } = useSortingAnimation(steps);
+
+  // Salva no histórico quando o algoritmo termina
+  useEffect(() => {
+    if (isFinished && step && currentStep > 0) {
+      saveHistoryEntry({
+        algorithm,
+        arraySize: baseArray.length,
+        comparisons: step.comparisons ?? 0,
+        swaps: step.swaps ?? 0,
+        steps: totalSteps,
+      });
+    }
+  }, [isFinished]);
 
   const handleAlgorithmChange = useCallback(
     (newAlg) => {
@@ -130,6 +144,7 @@ export function SortVisualizer({
         algorithm={algorithm}
         step={step}
         compact={compact}
+        arraySize={baseArray.length}
       />
     </div>
   );

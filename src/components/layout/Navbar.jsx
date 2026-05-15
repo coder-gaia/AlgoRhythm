@@ -24,6 +24,14 @@ export function Navbar() {
         >
           Graphs
         </NavLink>
+        <NavLink
+          to="/history"
+          className={({ isActive }) =>
+            `navbar-link ${isActive ? "navbar-link--active" : ""}`
+          }
+        >
+          Histórico
+        </NavLink>
       </div>
     </nav>
   );

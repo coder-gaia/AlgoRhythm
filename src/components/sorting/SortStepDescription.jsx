@@ -1,12 +1,18 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { SORTING_INFO } from "../../constants/algorithmInfo";
 import { COLORS } from "../../constants/colors";
+import { ComplexityChart } from "./ComplexityChart";
 
 /**
  * Painel pedagógico do sorting.
  * Mostra descrição do passo atual, complexidades e contadores.
  */
-export function SortStepDescription({ algorithm, step, compact = false }) {
+export function SortStepDescription({
+  algorithm,
+  step,
+  compact = false,
+  arraySize = 40,
+}) {
   const info = SORTING_INFO[algorithm];
   if (!info || !step) return null;
 
@@ -63,6 +69,10 @@ export function SortStepDescription({ algorithm, step, compact = false }) {
                 ? "✓ Algoritmo estável — preserva a ordem relativa de elementos iguais."
                 : "✗ Algoritmo instável — não preserva a ordem relativa de elementos iguais."}
             </p>
+          </div>
+
+          <div className="step-card">
+            <ComplexityChart algorithm={algorithm} arraySize={arraySize} />
           </div>
         </>
       )}
