@@ -38,4 +38,4 @@ Sem backend. Sem banco de dados. Deploy estático na Vercel.
 
 ## Links
 
-🔗 [Demo ao vivo](#) · 💻 [Repositório](#)
+🔗 **[Demo ao vivo](https://algorhythm-rho.vercel.app/)** · 💻 [Repositório](https://github.com/coder-gaia/AlgoRhythm)

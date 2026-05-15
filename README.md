@@ -2,9 +2,7 @@
 
 Visualizador interativo de algoritmos clássicos de ordenação e busca em grafos. Construído em React, com foco em clareza pedagógica, controle total do usuário e design elegante.
 
-🔗 **[Demo ao vivo](https://algorhythm.vercel.app)** — substitua pela URL real após o deploy
-
----
+## 🔗 **[Demo ao vivo](https://algorhythm-rho.vercel.app/)**
 
 ## Por que esse projeto existe
 
@@ -162,6 +160,6 @@ O projeto está hospedado na Vercel. Para fazer o seu próprio deploy:
 
 ## Autor
 
-Desenvolvido por **Alexandre** — desenvolvedor full stack em busca de recolocação.
+Desenvolvido por **Alexandre Gaia da Silva** — desenvolvedor full stack.
 
-📧 [seu email] | 🔗 [link do portfólio] | 💼 [linkedin]
+🔗 **[Portfólio](https://alexandregaia.netlify.app/)** · 💻 [Linkedin](https://www.linkedin.com/in/alexandre-gaia/)
